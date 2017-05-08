@@ -1,0 +1,49 @@
+body{
+    background-color: #aaa;
+}
+
+img{
+    width: 20px;
+    display: inline;
+}
+
+h1, h2, h3, h4, h5, a{
+    display:inline;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: normal;
+}
+
+pre{
+    font-family: inherit;
+    margin: 0;
+    white-space: pre-line;
+}
+
+.profile_photo{
+    width: 50px;
+    display: block;
+    border-radius: 5px;
+    float: left;
+    margin-left: -58px;
+}
+
+.tweet{
+    display: block;
+    min-height: 100px;
+    cursor: pointer;
+    max-width: 700px;
+    background-color: #eee;
+    padding-left: 65px;
+    margin: 1px auto;
+    border: 1px solid #e1e8ed;
+    border-radius: 5px;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
