@@ -1,6 +1,7 @@
 ## Synopsis
 
-Small script that saves all your twitter tl to an html file. 
+Small script that saves all your twitter tl to an html file.
+This file is located inside the html folder, has the date in the title, and sorts tweets from oldest at the top to newest at the bottom.
 
 ## Installation
 
