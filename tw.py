@@ -1,5 +1,5 @@
 """TODO:
-ver lo de los truncated
+meter fotos y videos
 
 """
 
@@ -34,7 +34,7 @@ count=0
 #Print all relevant atributes of the tweet structure to the html file
 def print_tweet(tweet, special=0, else1=0, else2=0):
     #We use text as a buffer to store all the relevant information, depending if its a normal tweet, rt, etc
-    text="<a class='tweet' id='"+tweet.id_str+"' href='https://twitter.com/"+tweet.user.screen_name+"/status/"+tweet.id_str+"'>\n"
+    text="<div class='tweet' id='"+tweet.id_str+"' href='https://twitter.com/"+tweet.user.screen_name+"/status/"+tweet.id_str+"'>\n"
     
     if special==RETWEET:
         text+="\t<img src='imgs/rt.svg'>\n"
@@ -70,7 +70,7 @@ def print_tweet(tweet, special=0, else1=0, else2=0):
         text+="\t<img src='imgs/fav.svg'>\n"
     text+="\t\t<h4>"+str(tweet.favorite_count)+"</h4>\n"
     
-    text+="</a>\n\n"
+    text+="</div>\n\n"
     
     #We wrtie the buffer to the file
     f.write(text.encode('utf-8'))
@@ -116,7 +116,7 @@ def get_all_tweets():
     f.write('<link type="text/css" rel="stylesheet" href="css.css">\n\n'.encode('utf-8'))
     
     #We filter the tweets by their type and print them on the html file
-    for tweet in reversed(alltweets):
+    for tweet in alltweets:
         try:
             if hasattr(tweet, 'retweeted_status'):
                 print_tweet(tweet.retweeted_status,RETWEET,tweet.user)
