@@ -1,5 +1,5 @@
 body{
-    background-color: #aaa;
+    background-color: #e6ecf0;
 }
 
 img{
@@ -46,4 +46,9 @@ pre{
 a{
     text-decoration: none;
     color: inherit;
+}
+
+.rtText{
+    width:27%;
+    margin: 0 auto;
 }
