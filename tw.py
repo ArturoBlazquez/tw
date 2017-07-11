@@ -62,22 +62,24 @@ def get_all_tweets():
         
         print "...%s tweets downloaded so far" % (len(alltweets))
     
-    #We write the tweets in packs of 100 so that the widget doesn't get bugged
+    #We write the tweets in lots of 150 so that the widget doesn't get bugged
     for i in range(0,len(alltweets),150):
         
         f = open('html/tweets'+str(datetime.datetime.now())+"("+str(i)+")"+'.html','a')
         
-        #We write the css link at the beginning of the htlm file 
-        text='<link type="text/css" rel="stylesheet" href="css.css">\n\n'
+        #We write the css and js links at the beginning of the html file 
+        text='<link type="text/css" rel="stylesheet" href="css.css">'
+        text+='<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>'
+        text+='<script src="js.js"></script>\n\n'
         
-        #We filter the tweets by their type and print them on the html file
+        #We print the tweets on the html file
         for tweet in alltweets[i:i+160]:
             if hasattr(tweet, 'retweeted_status'):
                 text+=get_html(tweet, True, tweet.retweeted_status)
             else:
                 text+=get_html(tweet)
         
-        #We save the html file
+        #We add twitter js and save the html file
         text+='\n\n<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
         f.write(text.encode('utf-8'))
 
