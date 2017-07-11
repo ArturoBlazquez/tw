@@ -3,13 +3,15 @@ body{
 }
 
 img{
-    width: 20px;
+    width: 28px;
     display: inline;
+    float: left;
+    margin: 10px 12px 0 -25px;
 }
 
 h1, h2, h3, h4, h5, a{
     display:inline;
-    font-size: 1.17em;
+    font-size: 17px;
     margin-top: 1em;
     margin-bottom: 1em;
     margin-left: 0;
