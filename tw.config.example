@@ -2,3 +2,5 @@ consumer_key
 consumer_secret
 access_key
 access_secret
+local_address
+public_address

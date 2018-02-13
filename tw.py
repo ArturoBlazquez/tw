@@ -1,15 +1,18 @@
 import tweepy #https://github.com/tweepy/tweepy
-import pytz, datetime
+import time
 import os
 
 #Obtain twitter API credentials
-with open('tw.config') as g:
+with open('/home/pi/Desktop/git/tw/tw.config') as g:
     cred=[x.strip() for x in g.readlines()]
 
 consumer_key = cred[0]
 consumer_secret = cred[1]
 access_key = cred[2]
 access_secret = cred[3]
+local_address = cred[4]
+public_address = cred[5]
+now=time.strftime("%Y-%m-%d_%H:%M")
 
 #Open the api
 api = 1
@@ -65,7 +68,8 @@ def get_all_tweets():
     #We write the tweets in lots of 150 so that the widget doesn't get bugged
     for i in range(0,len(alltweets),150):
         
-        f = open('html/tweets'+str(datetime.datetime.now())+"("+str(i)+")"+'.html','a')
+        f = open(local_address+'tweets_'+now+"_("+str(i)+")"+'.html','a')
+        faux = open(public_address+'tweets_'+now+"_("+str(i)+")"+'.html','a')
         
         #We write the css and js links at the beginning of the html file 
         text='<link type="text/css" rel="stylesheet" href="css.css">'
@@ -82,6 +86,7 @@ def get_all_tweets():
         #We add twitter js and save the html file
         text+='\n\n<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
         f.write(text.encode('utf-8'))
+        faux.write(text.encode('utf-8'))
 
 if __name__ == '__main__':
     #pass in the username of the account you want to download
