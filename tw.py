@@ -2,16 +2,17 @@ import tweepy #https://github.com/tweepy/tweepy
 import time
 import os
 
+actual_path = os.path.dirname(os.path.abspath(__file__))+'/'
+
 #Obtain twitter API credentials
-with open('/home/pi/Desktop/git/tw/tw.config') as g:
+with open(actual_path+'tw.config') as g:
     cred=[x.strip() for x in g.readlines()]
 
 consumer_key = cred[0]
 consumer_secret = cred[1]
 access_key = cred[2]
 access_secret = cred[3]
-local_address = cred[4]
-public_address = cred[5]
+public_address = cred[4]
 now=time.strftime("%Y-%m-%d_%H:%M")
 
 #Open the api
@@ -68,7 +69,7 @@ def get_all_tweets():
     #We write the tweets in lots of 150 so that the widget doesn't get bugged
     for i in range(0,len(alltweets),150):
         
-        f = open(local_address+'tweets_'+now+"_("+str(i)+")"+'.html','a')
+        f = open(actual_path+'html/tweets_'+now+"_("+str(i)+")"+'.html','a')
         faux = open(public_address+'tweets_'+now+"_("+str(i)+")"+'.html','a')
         
         #We write the css and js links at the beginning of the html file 
