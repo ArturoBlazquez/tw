@@ -92,3 +92,9 @@ def get_all_tweets():
 if __name__ == '__main__':
     #pass in the username of the account you want to download
     get_all_tweets()
+
+
+
+# TODO: leer las credenciales con el archivo guay. Ver si lo puedo colgar de alguna manera.
+# TODO: Si no hay public address no abrir faux. Renombrar
+# TODO: intentar encontrar una manera de no tener que hacer mil archivos
