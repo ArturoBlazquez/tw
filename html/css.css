@@ -1,10 +1,19 @@
-body{
+body {
     background-color: #e6ecf0;
 }
 
-img{
-    width: 28px;
+.rtText {
+    margin: 0 auto;
+    max-width: 550px;
+}
+
+img {
+    width: 19px;
     display: inline;
     float: left;
-    margin: 10px 12px 0 -25px;
+    margin: 0 5px 0 0;
+}
+
+.rtText > h5 {
+    margin: 4px 0;
 }
