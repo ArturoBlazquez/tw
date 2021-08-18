@@ -18,6 +18,16 @@ if it doesn't work check their documentation:
 python tw.py
 ```
 
+To run the script on a server periodically you can run 
+```
+sudo crontab -e
+```
+
+and add:
+```
+00 2,8,14,20 * * * python <path_to_script>/tw.py
+```
+
 ## Author
 
 Arturo Blázquez
