@@ -8,8 +8,9 @@ setTimeout(function() {
 
   if (isPhone) {
     button.addEventListener("click", function() {
-      $("body").css({ "margin": "0px 0px 10px 545px", "transform": "scale(3.5)", "overflow-x": "hidden" });
+      $("body").css({ "margin": "0px 0px 10px 574px", "transform": "scale(3.93)", "overflow-x": "hidden" });
       $(".twitter-tweet.twitter-tweet-rendered").css({ "margin": "-1px 5px", "width": "400px", "align": "right" });
+      $(".rtText").css({ "margin": "0 15px" });
       $("body").css("margin-top", -$(".twitter-tweet.twitter-tweet-rendered").position().top);
       window.scrollTo(0, document.body.scrollHeight);
     });
